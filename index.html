@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="main-block">
+                <div class="card">
+                    <h1>Список дел</h1>
+                    <div class="form">
+                        <input type="text" value="" onkeydown="if (event.keyCode == 13)
+                                    document.querySelector('.add-list-item').click()">
+                        <button class="add-list-item" id="btn">Добавить новое</button>
+                    </div>
+                     <!-- /.form -->
+                    <div class="block-with-checkbox">
+                        <input type="checkbox">
+                        <p>С высоким приоритетом</p>
+                    </div>
+                    <!-- /.block-with-checkbox -->
+                    <div class="list-block">
+                        <ul class="list">
+                            <li id="first-item"></li>
+                        </ul>
+                        <!-- /.list -->
+                    </div>
+                    <!-- /.list-block -->
+                    <div class="block-affairs">
+                        <a id="details-btn">Подробности</a>
+                        <div class="affairs">
+                            <h3>Всего дел открыто: <span class="amount-all-cases"></span></h3>
+                            <h3>Количество дел с высоким приоритетом: <span class="amount-cases-high-priority"></span></h3>
+                        </div>
+                    </div>
+                    <!-- /.block-affairs -->
+                    
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.main-block -->
+        </div>
+        <div class="aside">
+            <div class="color-picker" title="Выбрать другой цвет">
+                <div class="color-picker-swatches">
+                    <div class="color-picker-swatch">
+                        <svg data-v-50076768="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M30.828 1.172a4 4 0 0 0-5.657 0l-5.379 5.379-3.793-3.793-4.243 4.243 3.326 3.326L.328 25.081a1.123 1.123 0 0 0-.322.921h-.008v5a1 1 0 0 0 1 1h5.125c.288 0 .576-.11.795-.329l14.754-14.754 3.326 3.326 4.243-4.243-3.793-3.793 5.379-5.379a4 4 0 0 0 0-5.657zM5.409 30H2v-3.409l14.674-14.674 3.409 3.409L5.409 30z"></path></svg>
+                    </div>
+                    <!-- /.color-picker-swatch -->
+                </div>
+                <!-- /.color-picker-swatches -->
+                <div class="color-picker-swatch-group">
+                    <div class="color-picker-swatch" id="color-picker-swatch-steelblue" title="steelblue"></div>
+                    <div class="color-picker-swatch" id="color-picker-swatch-purple" title="purple"></div>
+                    <div class="color-picker-swatch" id="color-picker-swatch-cornflowerblue" title="cornflowerblue"></div>
+                    <div class="color-picker-swatch" id="color-picker-swatch-salmon" title="salmon"></div>
+                </div>
+                <!-- /.color-picker-swatch-group -->
+            </div>
+            <!-- /.color-picker -->
+        </div>
+        <!-- /.aside -->
+        <audio id="closeTask" src="close_task.mp3" ></audio>
+    </div>
+    <!-- /.container -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
