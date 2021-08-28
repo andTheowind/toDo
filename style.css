@@ -186,7 +186,8 @@ h1 {
 #color-picker-swatch-steelblue,
 #color-picker-swatch-purple,
 #color-picker-swatch-cornflowerblue,
-#color-picker-swatch-salmon {
+#color-picker-swatch-salmon,
+#color-picker-swatch-default {
     margin-top: 5px;
     width: 33px;
     height: 33px;
@@ -206,6 +207,9 @@ h1 {
 
 #color-picker-swatch-salmon {
     background-color: salmon;
+}
+#color-picker-swatch-default {
+    background: linear-gradient(72.89deg, #0A0E12 0.63%, #27313A 100%);
 }
 .button-delete .icon {
     pointer-events: none;

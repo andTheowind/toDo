@@ -4,6 +4,7 @@ let colorPickerSteelblue = document.querySelector("#color-picker-swatch-steelblu
 let colorPickerPurple = document.querySelector("#color-picker-swatch-purple");
 let colorPickerCornflowerblue = document.querySelector("#color-picker-swatch-cornflowerblue");
 let colorPickerSalmon = document.querySelector("#color-picker-swatch-salmon");
+let colorPickerDefault = document.querySelector("#color-picker-swatch-default");
 let colorSelection = document.querySelector('.color-picker-swatches');
 let colorPickerGroup = document.querySelector('.color-picker-swatch-group');
 let highPriority = document.querySelector('input[type=checkbox]');    
@@ -64,12 +65,21 @@ detailsBtn.addEventListener('click', function() {
 
 const changeBackgroundColor = (e) => {
 
+
+    console.log(e.target);
     let arr = e.target.id.split('-');
     let lastArrayItem = arr[arr.length - 1];
     let body = document.querySelector("body");
     let card = document.querySelector(".card");
 
-    body.style.background = lastArrayItem;
+    console.log(lastArrayItem);
+
+    if (lastArrayItem !== 'default') {
+        body.style.background = lastArrayItem;
+    } else {
+        body.style.background = "linear-gradient(72.89deg, #0A0E12 0.63%, #27313A 100%)";
+        card.style.backgroundColor = "transparent";
+    }
 
     if (body.style.background === "steelblue") {
         card.style.backgroundColor = "#3c6f99";
@@ -90,12 +100,13 @@ colorPickerSteelblue.addEventListener('click', changeBackgroundColor);
 colorPickerPurple.addEventListener('click', changeBackgroundColor);
 colorPickerCornflowerblue.addEventListener('click', changeBackgroundColor);
 colorPickerSalmon.addEventListener('click', changeBackgroundColor);
+colorPickerDefault.addEventListener('click', changeBackgroundColor);
 
 
 colorSelection.addEventListener('click', function () {
 
-    if (colorPickerGroup.style.height !== '140px') {
-        colorPickerGroup.style.height = '140px';
+    if (colorPickerGroup.style.height !== '180px') {
+        colorPickerGroup.style.height = '180px';
     } else {
         colorPickerGroup.style.height = '0px';
     }
