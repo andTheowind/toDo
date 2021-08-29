@@ -11,7 +11,7 @@ let highPriority = document.querySelector('input[type=checkbox]');
 let detailsBtn = document.querySelector('#details-btn');
 let amountCasesHighPriority = document.querySelector(".amount-cases-high-priority");
 let amountAllCases = document.querySelector(".amount-all-cases");
-
+let offSoundsBtn = document.querySelector(".offSounds");
 
 amountCasesHighPriority.textContent = 0;
 amountAllCases.textContent = 0;
@@ -25,7 +25,7 @@ const addListItem = () => {
     if (input !== "") {
         ++amountAllCases.textContent;
         listItem.innerHTML = `${input} 
-                <button class="button-delete" onclick="new Audio('sound_zynzyn.mp3').play(); return false;">
+                <button class="button-delete" onclick="new Audio('close_task.mp3').play(); return true;">
                     <svg class="icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L26 26" stroke="#3596F5" stroke-width="3"></path>
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
@@ -51,6 +51,15 @@ const addListItem = () => {
         })
     }
 
+    let lis = document.querySelectorAll('.list > li');
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].addEventListener('click', function (e) {
+            lis[i].style.textDecoration = "line-through";
+            lis[i].style.opacity = ".5";
+        })
+    }
+
+
 
 }
 
@@ -65,14 +74,10 @@ detailsBtn.addEventListener('click', function() {
 
 const changeBackgroundColor = (e) => {
 
-
-    console.log(e.target);
     let arr = e.target.id.split('-');
     let lastArrayItem = arr[arr.length - 1];
     let body = document.querySelector("body");
     let card = document.querySelector(".card");
-
-    console.log(lastArrayItem);
 
     if (lastArrayItem !== 'default') {
         body.style.background = lastArrayItem;
@@ -102,6 +107,21 @@ colorPickerCornflowerblue.addEventListener('click', changeBackgroundColor);
 colorPickerSalmon.addEventListener('click', changeBackgroundColor);
 colorPickerDefault.addEventListener('click', changeBackgroundColor);
 
+
+offSoundsBtn.addEventListener('click', function() {
+
+    let deleteBtns = document.querySelectorAll('.button-delete');
+    let changeClicks = true;
+    let soundIcon1 = document.querySelector('#sound-icon-1');
+    let soundIcon2 = document.querySelector('#sound-icon-2');
+
+    for (let i = 0; i < deleteBtns.length; i++) {
+        deleteBtns[i].removeAttribute('onclick');
+    }
+    soundIcon1.style.display = "none";
+    soundIcon2.style.display = "block";
+
+});
 
 colorSelection.addEventListener('click', function () {
 
