@@ -53,7 +53,7 @@ const addListItem = (e) => {
     for (let i = 0; i < deleteBtns.length; i++) {
         deleteBtns[i].addEventListener('click', function() {
             if(changeClicks == true) {
-                let playing = new Audio('close_task.mp3').play();
+                let playing = new Audio('sound_zynzyn.mp3').play();
                 playing.autoplay = true;
             }
         })
