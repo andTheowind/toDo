@@ -25,7 +25,7 @@ const addListItem = () => {
     if (input !== "") {
         ++amountAllCases.textContent;
         listItem.innerHTML = `${input} 
-                <button class="button-delete" onclick="new Audio('fart-short-burst_gynhf_vo.mp3').play(); return false;">
+                <button class="button-delete" onclick="new Audio('sound_zynzyn.mp3').play(); return false;">
                     <svg class="icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L26 26" stroke="#3596F5" stroke-width="3"></path>
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
