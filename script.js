@@ -25,7 +25,7 @@ const addListItem = (e) => {
     if (input !== "") {
         ++amountAllCases.textContent;
         listItem.innerHTML = `${input} 
-                <button class="button-delete">
+                <button class="button-delete" onclick="new Audio('sound_zynzyn.mp3').play(); return false;">
                     <svg class="icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L26 26" stroke="#3596F5" stroke-width="3"></path>
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
@@ -47,15 +47,6 @@ const addListItem = (e) => {
     for (let i = 0; i < deleteBtns.length; i++) {
         deleteBtns[i].addEventListener('click', function (e) {
             e.target.parentNode.remove();
-        })
-    }
-    
-    for (let i = 0; i < deleteBtns.length; i++) {
-        deleteBtns[i].addEventListener('click', function() {
-            if(changeClicks == true) {
-                let playing = new Audio('sound_zynzyn.mp3').play();
-                playing.autoplay = true;
-            }
         })
     }
 
@@ -119,17 +110,22 @@ soundsBtn.addEventListener('click', function() {
     let deleteBtns = document.querySelectorAll('.button-delete');
     let soundIcon1 = document.querySelector('#sound-icon-1');
     let soundIcon2 = document.querySelector('#sound-icon-2');
-
+    
     if(changeClicks === true) {
         soundIcon1.style.display = "none";
-        soundIcon2.style.display = "block";
-        changeClicks = false;
-        return changeClicks;
+        soundIcon2.style.display = "block"
+        for(let i = 0; i < deleteBtns.length; i++) {
+            deleteBtns[i].removeAttribute("onclick");
+        }
+        changeClicks = false
     } else {
         soundIcon1.style.display = "block";
         soundIcon2.style.display = "none";
-        changeClicks = true;
-        return changeClicks;
+        for(let i = 0; i < deleteBtns.length; i++) {
+            deleteBtns[i].setAttribute("onclick", "new Audio('sound_zynzyn.mp3').play(); return false;");
+        }
+
+        changeClicks = true
     }
     
 
