@@ -22,7 +22,8 @@ const addListItem = (e) => {
     let input = document.querySelector(".form > input").value;
     let listItem = document.createElement("li");
 
-    if (input !== "") {
+    let strWithOutSpaces = input.toString().replace(/ /g, "");
+    if (input !== "" && strWithOutSpaces !== "") {
         ++amountAllCases.textContent;
         listItem.innerHTML = `${input} 
                 <button class="button-delete" onclick="new Audio('sound_zynzyn.mp3').play(); return false;">
