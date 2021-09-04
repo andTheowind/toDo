@@ -163,6 +163,6 @@ const buttonClickEffect = (e) => {
     setTimeout(() => circle.remove(), 500);
 }
 btn.addEventListener("click", () => { 
-    addListItem;
-    buttonClickEffect;
+    addListItem();
+    buttonClickEffect();
 })
