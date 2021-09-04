@@ -141,5 +141,28 @@ colorSelection.addEventListener('click', function () {
 
 });
 
+const buttonClickEffect = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
 
-btn.addEventListener("click", addListItem);
+    const buttonTop = e.target.offsetTop;
+    const buttonLeft = e.target.offsetLeft;
+
+    const xInside = x - buttonLeft;
+    const yInside = y - buttonTop;
+
+    const circle = document.createElement('span');
+    circle.classList.add('circle');
+    circle.style.top = yInside + 'px';
+    circle.style.left = xInside + 'px';
+
+    console.log(xInside, yInside);
+
+    this.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 500);
+}
+btn.addEventListener("click", () => { 
+    addListItem();
+    buttonClickEffect();
+}
