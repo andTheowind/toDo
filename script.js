@@ -33,7 +33,6 @@ const addListItem = (e) => {
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
                     </svg>
                 </button>`;
-        input.setAttribute("placeholder", "Введите задание");
         if (highPriority.checked) {
             ++amountCasesHighPriority.textContent;
             listItem.style.border = "1px solid red";
@@ -42,6 +41,7 @@ const addListItem = (e) => {
         list.insertBefore(listItem, list.firstChild);
     } else {
         input.classList.add('unentered-value');
+        input.setAttribute("placeholder", "Введите задание");
     }
     document.querySelector(".form > input").value = '';
 
