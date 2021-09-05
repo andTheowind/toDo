@@ -34,6 +34,10 @@ h1 {
     justify-content: center;
 }
 
+.unentered-value {
+    border: 2px solid red;
+}
+
 .form input:first-child {
     margin-right: 10px;
     width: 340px;
