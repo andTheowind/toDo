@@ -19,19 +19,21 @@ amountAllCases.textContent = 0;
 
 const addListItem = (e) => {
 
-    let input = document.querySelector(".form > input").value;
+    let input = document.querySelector(".form > input");
+    let inputValue = document.querySelector(".form > input").value;
     let listItem = document.createElement("li");
 
     let strWithOutSpaces = input.toString().replace(/ /g, "");
-    if (input !== "" && strWithOutSpaces !== "") {
+    if (inputValue !== "" && strWithOutSpaces !== "") {
         ++amountAllCases.textContent;
-        listItem.innerHTML = `${input} 
+        listItem.innerHTML = `${inputValue} 
                 <button class="button-delete" onclick="new Audio('sound_zynzyn.mp3').play(); return false;">
                     <svg class="icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L26 26" stroke="#3596F5" stroke-width="3"></path>
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
                     </svg>
                 </button>`;
+        input.setAttribute("placeholder", "Введите задание");
         if (highPriority.checked) {
             ++amountCasesHighPriority.textContent;
             listItem.style.border = "1px solid red";
@@ -39,7 +41,7 @@ const addListItem = (e) => {
         }
         list.insertBefore(listItem, list.firstChild);
     } else {
-        alert('Вы не ввели текст');
+        input.classList.add('unentered-value');
     }
     document.querySelector(".form > input").value = '';
 
