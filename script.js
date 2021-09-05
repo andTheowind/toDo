@@ -33,6 +33,7 @@ const addListItem = (e) => {
                         <path d="M26 2L2 26" stroke="#3596F5" stroke-width="3"></path>
                     </svg>
                 </button>`;
+        input.classList.remove('unentered-value');
         if (highPriority.checked) {
             ++amountCasesHighPriority.textContent;
             listItem.style.border = "1px solid red";
