@@ -121,6 +121,7 @@ h1 {
     max-width: 498px;
     position: relative;
     cursor: pointer;
+    word-wrap: break-word;
 }
 
 .list > li > button {
