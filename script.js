@@ -23,7 +23,7 @@ const addListItem = (e) => {
     let inputValue = document.querySelector(".form > input").value;
     let listItem = document.createElement("li");
 
-    let strWithOutSpaces = input.toString().replace(/ /g, "");
+    let strWithOutSpaces = inputValue.toString().replace(/ /g, "");
     if (inputValue !== "" && strWithOutSpaces !== "") {
         ++amountAllCases.textContent;
         listItem.innerHTML = `${inputValue} 
